@@ -1,1 +1,1 @@
-<marquee> Hello world </marquee>
+<i> Hello world </i>
