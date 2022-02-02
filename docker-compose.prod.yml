@@ -5,6 +5,7 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile.prod
+    image: 748295779761.dkr.ecr.us-east-1.amazonaws.com/mysite_proj:web
     command: gunicorn hello_django.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - static_volume:/home/app/web/staticfiles
@@ -24,6 +25,7 @@ services:
   nginx-proxy:
     container_name: nginx-proxy
     build: nginx
+    image: 748295779761.dkr.ecr.us-east-1.amazonaws.com/mysite_proj:nginx-proxy
     restart: always
     ports:
       - 443:443
